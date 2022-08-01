@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Zoom clone</title>
     <script>
@@ -17,6 +30,67 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="video-grid" class="video-grid"></div>
+    <main class="main">
+      <section class="main__left">
+        <div class="main__videos">
+          <div id="video-grid" class="main__videoGrid"></div>
+        </div>
+        <div class="main__controls">
+          <div class="main__controlsBlock">
+            <div
+              class="main__controlsButton main__muteButton"
+              onclick="muteUnmute()"
+            >
+              <i class="fa-solid fa-microphone"></i>
+              <span>Mute</span>
+            </div>
+            <div
+              class="main__controlsButton main__videoButton"
+              onclick="playStop()"
+            >
+              <i class="fa-solid fa-video"></i>
+              <span>Stop Video</span>
+            </div>
+          </div>
+          <div class="main__controlsBlock">
+            <div class="main__controlsButton">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Security</span>
+            </div>
+            <div class="main__controlsButton">
+              <i class="fa-solid fa-user-group"></i>
+              <span>Participants</span>
+            </div>
+            <div class="main__controlsButton" onclick="hideShowChatWindow()">
+              <i class="fa-solid fa-message"></i>
+              <span>Chat</span>
+            </div>
+          </div>
+          <div class="main__controlsBlock">
+            <div class="main__controlsButton">
+              <i
+                class="fa-solid fa-arrow-right-from-bracket main__controlsLeaveMeeting"
+              ></i>
+              <span class="main__controlsLeaveMeeting">Leave Meeting</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main__right">
+        <div class="main__header">
+          <h4>Chat</h4>
+        </div>
+        <div class="main__chatWindow">
+          <ul class="main__messages"></ul>
+        </div>
+        <div class="main__messageContainer">
+          <input
+            id="chat-message"
+            type="text"
+            placeholder="Type message here..."
+          />
+        </div>
+      </section>
+    </main>
   </body>
 </html>
